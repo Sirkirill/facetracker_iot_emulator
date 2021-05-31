@@ -74,5 +74,8 @@ class Companies:
 
 if __name__ == '__main__':
     Companies.config_camera()
-    for _ in range(100):
-        print(Companies.move())
+    while True:
+        try:
+            print(Companies.move())
+        except (KeyboardInterrupt, SystemExit):
+            break
