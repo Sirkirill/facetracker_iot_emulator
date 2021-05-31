@@ -1,9 +1,11 @@
+import time
 from os import listdir
 from os.path import join
 from random import choice
 
 import requests
 
+from settings import DELAY
 from settings import IMAGES_DIR
 from settings.urls import get_url
 
@@ -75,6 +77,7 @@ class Companies:
 if __name__ == '__main__':
     Companies.config_camera()
     while True:
+        time.sleep(DELAY)
         try:
             print(Companies.move())
         except (KeyboardInterrupt, SystemExit):
